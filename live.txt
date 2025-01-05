@@ -1,0 +1,4 @@
+https://digitalyclocking.netlify.app/...
+
+
+The question mark (?) in this code is part of the ternary operator, a shorthand way of writing an if-else statement in JavaScript. It is used for simple conditional expressions where one of two values is assigned based on a condition.

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+    <style>
+        body {
+    background: black;
+}
+
+.clock {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    color: cyan;
+    font-size: 60px;
+    font-family: Orbitron;
+    letter-spacing: 7px;
+    border: 2px solid cyan;
+    padding: 40px 20px;
+    text-align: center; 
+    display: inline-block; /* Make sure the clock size fits content */
+    filter: blur(1px);
+}
+
+.clock:hover{
+    filter:blur(0px);
+}
+
+
+
+    </style>
+</head>
+<body>
+    <div id="clock" class="clock" onload="showTime()"></div>
+    <script>     
+
+     function showTime(){
+
+     var date= new Date();// we get current date and time from this line of code
+     var h= date.getHours();//hours (0---23)
+     var m=date.getMinutes();//minutes (0---59)
+     var s=date.getSeconds();//seconds  (0--59)
+    var sessions = "AM";
+
+if(h==0){
+    h=12
+};
+
+if(h>12){
+    h=h-12
+    session="PM"
+};
+
+
+ h=(h<10)? "0" + h :h;
+ m=(m<10)? "0" + m :m;
+ s=(s<10)? "0" + s: s;
+
+ var time =h + ":" + m +":" + s +" " + sessions;
+
+ document.getElementById("clock").innerHtml=time;
+ document.getElementById('clock').textContent=time;
+
+ setTimeout(showTime, 1000);
+
+};
+
+showTime();
+
+
+
+
+    </script>
+</body>
+</html>
